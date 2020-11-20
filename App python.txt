@@ -1,0 +1,22 @@
+import random
+from tkinter import *
+from tkinter import messagebox
+
+text = "abcdefghijklmnopqrstuvwxyz0123456789"
+window = Tk()
+window.title("Captcha App")
+window.geometry("300x100")
+captcha = StringVar()
+user_input = StringVar()
+
+def set_captcha():
+    s = random.choices(text, k = 6)
+    captcha.set(''.join(s))
+
+def check():
+    if captcha.get() ==user_input.get():
+        messagebox.showinfo("success","correct")
+        
+
+
+
